@@ -238,12 +238,12 @@ body>h1 {
 }
 
 .hole {
-  flex: 1 0 33.33%;
+  flex: 1 0 33.33%;           /*grow shrink take place*/
   overflow: hidden;
   position: relative;
 }
 
-.hole:after {
+.hole::after {
   display: block;
   background: url(dirt.svg) bottom center no-repeat;
   background-size: contain;

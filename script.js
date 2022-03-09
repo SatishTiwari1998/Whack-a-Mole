@@ -28,18 +28,17 @@ function randomTime(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
-function randomHole(holes) {
+function randomHole(holes) {                               //RANDOM HOLE FUNCTION
   const id = Math.floor(Math.random() * holes.length);
   const hole = holes[id];
-  if (hole === lastHole) {
-    //console.log("Ah nah thats the same one bud");
+  if (hole === lastHole) {                                 // ensuring same hole cannot come twice
     return randomHole(holes);
   }
   lastHole = hole;
   return hole;
 }
 
-function peep() {
+function peep() {                                          //PEEP Function
   let time;
   if(levelSelector.value==="easy")
   {
@@ -66,7 +65,7 @@ function bonk(e) {
   if(playtimeUp===false)
   {
   score++;
-  this.parentNode.classList.remove("up");
+  this.parentNode.classList.remove("up");       //
   scoreBoard.textContent = score;
   let audio = new Audio('punch.mp3');
   audio.play()
